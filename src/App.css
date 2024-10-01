@@ -1,0 +1,106 @@
+.App {
+  text-align: center;
+  color: #707271;
+}
+
+.nav-bar-container {
+  display: flex;
+  align-items: flex-end;
+  background-color: #FFBB22;
+  border-bottom: 10px solid #12173F;
+}
+
+select {
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+
+  color: #12173F;
+  background-color: #FFBB22;
+
+  border-radius: 5px;
+  padding: 5px 10px;
+  width: 200px;
+  height: 40px;
+  box-shadow: 5px 6px 5px #12173F;
+
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+select:hover {
+  cursor: pointer;
+}
+
+select:focus {
+  outline: 2px solid #12173F;
+}
+
+
+.memphis-logo {
+  height: 12vmin;
+}
+
+h1 {
+  color: #FFBB22;
+}
+
+h2 {
+  color: white;
+}
+
+.linebreak {
+  border-bottom: 10px solid #FFBB22;
+}
+
+.jumpheight-right {
+  margin-bottom: 25px;
+}
+
+.roster {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 50px;
+  padding: 15px;
+  background-color: #5D76A9;
+  color: white;
+}
+
+.player-data {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+  font-weight: 660;
+  background-color: #12173F;
+  padding-bottom: 50px;
+}
+
+.profile {
+  width: 15%;
+  margin-left: 50px;
+  background-color: #12173F;
+  color: #FFBB22;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-left: 5px solid #FFBB22;
+  border-right: 5px solid #FFBB22;
+  border-bottom: 5px solid #FFBB22;
+}
+
+#headshot {
+  width: 100%;
+}
+
+.data {
+  width: 100%;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-right: 50px;
+  color: #5D76A9;
+}
+
+
+
