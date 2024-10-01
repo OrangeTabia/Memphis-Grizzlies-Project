@@ -6,12 +6,12 @@ Potential candidates for the Memphis Grizzlies Software Developer position are t
 
 **Stpe 2:** Open the file in your IDE/editor of choice (I used VSCode)
 
-**Step 3:** In the IDE terminal, cd into 'frontend' and install the dependencies
+**Step 3:** In the IDE terminal, install the dependencies
 ```
 $ npm install
 ```
 
-**Step 4:** In the 'frontend' folder, run the following line in the terminal: 
+**Step 4:** Run following line in the terminal: 
 ```
 $ npm start
 ```
