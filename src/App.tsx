@@ -8,24 +8,31 @@ import logo from './Images/nba-memphis-grizzlies-logo.png';
 import headshot from './Images/headshot.png';
 import './App.css';
 
+// Typescript 'interface' defines the structure of an object and is used for type safety 
 
 export interface Force {
-  ID: Number;
-  Date: String;
+  ID: number;
+  Date: string;
   Peak_Eccentric_Force: string;
   Peak_Concentric_Force: string;
   Jump_Height: string;
-  Leg: String;
-  Player: String;
+  Leg: string;
+  Player: string;
 }
 
 export interface Tracking { 
-  ID: Number;
-  Date: String;
+  ID: number;
+  Date: string;
   High_Accel: string;
   High_Decel: string;
   Distance: string;
-  Player: String;
+  Player: string;
+}
+
+export interface Schedule { 
+  ID: number;
+  Date: string;
+  Type: GameType
 }
 
 enum GameType {
@@ -44,11 +51,6 @@ export enum DataType {
   Tracking='Tracking'
 }
 
-export interface Schedule { 
-  ID: Number;
-  Date: String;
-  Type: GameType
-}
 
 
 function App() {
