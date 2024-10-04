@@ -1,4 +1,4 @@
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Label } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { Force, Granularity, Schedule } from '../App';
 import { groupByWeek, groupByMonth, orderDates } from '../Utils';
 
@@ -86,7 +86,7 @@ function ForcePlate({
                     <Tooltip 
                         labelFormatter={value => {
                             // Find the date in question to then extrapolate the game type
-                            const gameType = schedule.find((force) => force.Date == value)?.Type;
+                            const gameType = schedule.find((force) => force.Date === value)?.Type;
                             if (gameType) {
                                 return `Date: ${value} \n Type: ${gameType}`;
                             } else {
@@ -113,7 +113,7 @@ function ForcePlate({
                     <Tooltip 
                         labelFormatter={value => {
                             // Find the date in question to then extrapolate the game type
-                            const gameType = schedule.find((force) => force.Date == value)?.Type;
+                            const gameType = schedule.find((force) => force.Date === value)?.Type;
                             if (gameType) {
                                 return `Date: ${value} \n Type: ${gameType}`;
                             } else {
@@ -142,7 +142,7 @@ function ForcePlate({
                     <Tooltip 
                         labelFormatter={value => {
                             // Find the date in question to then extrapolate the game type
-                            const gameType = schedule.find((force) => force.Date == value)?.Type;
+                            const gameType = schedule.find((force) => force.Date === value)?.Type;
                             if (gameType) {
                                 return `Date: ${value} \n Type: ${gameType}`;
                             } else {
@@ -170,7 +170,7 @@ function ForcePlate({
                     <Tooltip 
                         labelFormatter={value => {
                             // Find the date in question to then extrapolate the game type
-                            const gameType = schedule.find((force) => force.Date == value)?.Type;
+                            const gameType = schedule.find((force) => force.Date === value)?.Type;
                             if (gameType) {
                                 return `Date: ${value} \n Type: ${gameType}`;
                             } else {

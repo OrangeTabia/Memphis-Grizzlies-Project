@@ -9,6 +9,7 @@ import headshot from './Images/headshot.png';
 import './App.css';
 
 // Typescript 'interface' defines the structure of an object and is used for type safety 
+// and only used during compile time
 
 export interface Force {
   ID: number;
@@ -40,6 +41,7 @@ enum GameType {
   Game,
 }
 
+// enums for data accessiblity in different components 
 export enum Granularity {
   Daily='daily',
   Weekly='weekly',
@@ -52,14 +54,15 @@ export enum DataType {
 }
 
 
-
 function App() {
+  // stores the data parsed from the three CSV files
   const [forceState, setForceStsate] = useState<Force[]>([]);
   const [trackingState, setTrackingState] = useState<Tracking[]>([]);
   const [scheduleState, setSchedulingState] = useState<Schedule[]>([]);
 
   const FORCE_PLATE = Papa.parse('force_plate.csv', {
     complete: function(forceResults) {
+      // type assertion to ensure that Typescript understands the structure of the data
       setForceStsate(forceResults.data as Force[]);
     }, 
     delimiter: ',',
@@ -91,34 +94,38 @@ function App() {
   const uniqueNames = new Set([...playersForce, ...playersTracking]);
   const uniqueNamesArray = Array.from(uniqueNames);
 
-
+  // state for player selected when clicked
   const [selectedPlayer, setPlayer] = useState<String>();
+  // state for force data to be displayed when clicked
   const [playerForceData, setPlayerForceData] = useState<Force[]>([]);
+  // state for tracking data to be displayed when clicked
   const [playerTrackingData, setPlayerTrackingData] = useState<Tracking[]>([]);
 
+  // state for type of data when selected - default is Force Plate data
   const [selectedDataType, setDataType] = useState<DataType>(DataType.ForcePlate);
+  // state for displaying either daily, weekly, or monthly data - default is the daily view of data
   const [selectedGranularity, setGranularity] = useState<Granularity>(Granularity.Daily);
 
 
-  // Use Effect so that any time a new player or data type is selected, we'll filter to the players data
+  // Use Effect so that any time a new player is selected, we'll filter to the players data
   useEffect(() => {
-    if (selectedPlayer || selectedDataType) { 
+    if (selectedPlayer) { 
       setPlayerForceData(forceState.filter((player) => player["Player"] === selectedPlayer));
       setPlayerTrackingData(trackingState.filter((player) => player["Player"] === selectedPlayer));
     }
-  }, [selectedPlayer, selectedDataType]); 
+  }, [selectedPlayer]); 
 
 
 
   return (
     <div className="App">
+
       <div className="nav-bar-container">
         <img src={logo} className="memphis-logo" alt="logo" />
       </div>
 
       <div className="roster">
         <select
-            className="custom-select"
             value={undefined}
             onChange={(e) => {
               setPlayer(e.target.value)
@@ -131,11 +138,16 @@ function App() {
               </option>
             ))}
         </select>
-
-        {selectedPlayer !=null && 
+        
+        
+        {
+        // conditionally renders the data once a player is selected
+        selectedPlayer != null && 
         <>
           <select
             onChange={(e) => {
+              // need to add 'as DataType' in order for TypeScript to understand 
+              // the value from the select element because setDataType expects a value of type DataType 
               setDataType(e.target.value as DataType)
             }}
           >
@@ -146,7 +158,9 @@ function App() {
         </>
         }
 
-        {selectedPlayer != null && 
+        {
+        // conditionally renders the granularity choices once a player is selected
+        selectedPlayer != null && 
         <>
           <select onChange={(e) => setGranularity(e.target.value as Granularity)}>
             <option disabled selected>--Select a View--</option>

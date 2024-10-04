@@ -86,7 +86,7 @@ function TrackingFunc({
                         <Tooltip 
                             labelFormatter={value => {
                                 // Find the date in question to then extrapolate the game type
-                                const gameType = schedule.find((tracking) => tracking.Date == value)?.Type;
+                                const gameType = schedule.find((tracking) => tracking.Date === value)?.Type;
                                 if (gameType) {
                                     return `Date: ${value} \n Type: ${gameType}`;
                                 } else {
@@ -114,7 +114,7 @@ function TrackingFunc({
                         <Tooltip 
                             labelFormatter={value => {
                                 // Find the date in question to then extrapolate the game type
-                                const gameType = schedule.find((tracking) => tracking.Date == value)?.Type;
+                                const gameType = schedule.find((tracking) => tracking.Date === value)?.Type;
                                 if (gameType) {
                                     return `Date: ${value} \n Type: ${gameType}`;
                                 } else {
