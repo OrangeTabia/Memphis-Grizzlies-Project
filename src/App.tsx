@@ -124,7 +124,7 @@ function App() {
         <img src={logo} className="memphis-logo" alt="logo" />
       </div>
 
-      <div className="roster">
+      <div className="player-data">
         <select
             value={undefined}
             onChange={(e) => {
@@ -141,7 +141,7 @@ function App() {
         
         
         {
-        // conditionally renders the data once a player is selected
+          // conditionally renders the data once a player is selected
         selectedPlayer != null && 
         <>
           <select
@@ -159,7 +159,7 @@ function App() {
         }
 
         {
-        // conditionally renders the granularity choices once a player is selected
+          // conditionally renders the granularity choices once a player is selected
         selectedPlayer != null && 
         <>
           <select onChange={(e) => setGranularity(e.target.value as Granularity)}>
@@ -172,9 +172,8 @@ function App() {
         }
       </div>
 
-      <div className="player-data">
+      <div className="player-info">
         <div className="profile">
-          
           {selectedPlayer != null && (
             <>
               <h2>{selectedPlayer}</h2>
@@ -182,7 +181,6 @@ function App() {
               <p>#22</p>
               <p>Guard</p>
             </>
-
           )}
         </div>
 
@@ -202,6 +200,7 @@ function App() {
                 />
                 : ('Force plate data not available for user'))
               }
+              
               {
                 selectedDataType == DataType.Tracking &&
                 (playerTrackingData.length > 0 ? 
