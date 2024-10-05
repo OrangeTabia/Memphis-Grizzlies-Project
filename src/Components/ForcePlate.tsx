@@ -23,6 +23,7 @@ function consolidateForceData({
 }: DataProps) { 
 
     switch (granularity) { 
+        
         case Granularity.Daily: 
             return data;
         
