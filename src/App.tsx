@@ -186,7 +186,7 @@ function App() {
 
         <div className="data">
           {
-            // When a player is selected, pass through to the components the filtered
+            // when a player is selected, pass through to the components the filtered
             // data set that is dictated by the player component
           selectedPlayer != null &&  (
             <>
@@ -200,7 +200,7 @@ function App() {
                 />
                 : ('Force plate data not available for user'))
               }
-              
+
               {
                 selectedDataType == DataType.Tracking &&
                 (playerTrackingData.length > 0 ? 

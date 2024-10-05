@@ -9,6 +9,7 @@ export function getStartOfWeek(dateStr:string) {
 }
 
 // helper function to group dates by week for weekly granularity
+// returns an object where each key is a week start date, and each value is an array of items for that week
 export function groupByWeek(data:any) {
     return data.reduce((result:any, item:any) => {
         const weekStart = getStartOfWeek(item.Date).toISOString().split('T')[0];
