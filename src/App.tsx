@@ -9,7 +9,6 @@ import headshot from './Images/headshot.png';
 import './App.css';
 
 // Typescript 'interface' defines the structure of an object and is used for type safety 
-// and only used during compile time
 
 export interface Force {
   ID: number;
