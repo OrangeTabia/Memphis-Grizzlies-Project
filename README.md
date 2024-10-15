@@ -4,7 +4,7 @@ Potential candidates for the Memphis Grizzlies Software Developer position are t
 ## Run Instructions
 **Step 1:** Unzip the file named 'Tabia-Ye-Memphis-Grizzlies-Project'
 
-**Stpe 2:** Open the file in your IDE/editor of choice (I used VSCode)
+**Step 2:** Open the file in your IDE/editor of choice (I used VSCode)
 
 **Step 3:** In the IDE terminal, install the dependencies
 ```
